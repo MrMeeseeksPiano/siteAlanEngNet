@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>  
+        <title>Sobre mim</title>
+        <link rel="stylesheet" href="style.css">  
+        <script src="https://kit.fontawesome.com/d22599a265.js" crossorigin="anonymous"></script>
+        <style>
+            .center {
+                margin: auto;
+                width: 60%;
+                padding: 10px;
+            }
+            .flex-container {
+                display:flex;
+                flex-direction:row;
+            }
+        </style> 
+    </head>
+
+<body id="bd">    
+    <img src="pianokeys1.jpg">
+    
+    <div class = "center">
+        
+        <button type="button" onclick="temaClaro()"> <i class="fa-solid fa-sun"></i> </button>
+        <button type="button" onclick="temaEscuro()"> <i class="fa-solid fa-moon"></i> </button>
+        
+        
+        <h1 id="h1_0">
+            Um pouco de mim
+        </h1>
+        <p id="p1" >
+            Olá, meu nome é Alan Fontenele e faço Engenharia Elétrica na Universidade de Brasília.
+            Atualmente faço parte do programa trainee da Engnet, empresa júnior de Engenharia de Redes da UnB, onde entrei por causa
+            do meu interesse por tecnologia e programação, o que, naturalmente me fez ter maior interesse pela diretoria de projetos. Antes da engenharia, cheguei a cursar Geofísica, quando iniciei um PIBIC que mistura as áreas de 
+            cartografia, geodésia e eletrônica num projeto de dispositivo GNSS portátil e com precisão na casa dos centímetros.
+        </p>  
+        <p id="p2">
+            Meus hobbies favoritos são tocar piano, jogar videogames online e sair com os amigos. Em 2017 comecei a postar alguns vídeos de meus arranjos no Youtube e mais tarde no 
+            Spotify sob o nome de Mr.Meeseeks Piano. Também comecei a vender as partituras transcritas por mim em sites como Patreon e Musicnotes. Hoje em dia tenho um retorno financeiro que me garante alguma independência dos meus pais 
+            no que diz respeito ao lazer e outras despesas básicas. Por ter alguma experiência com essa coisa toda de buscar destaque e o maior número de cliques na internet, imagino que a diretoria de marketing seria um bom match comigo. 
+        </p>
+        <br> <hr id="hr1">
+
+        <a href="https://open.spotify.com/artist/0OEsWoGgQiO6u8HfBRmiFz?si=M-ZWNLI-Qq6RhApywd5cuA">
+        <span style="font-size: 20px; color: limegreen; font-family:Verdana;">
+            <i class="fa-brands fa-spotify"></i> Spotify </a>
+        </span>
+        
+        <a href="https://www.youtube.com/channel/UCi01TG92AHNcPhJNsPJnivg">
+        <span style="font-size: 20px; color: red; font-family:Verdana;">
+            <i class="fa-brands fa-youtube"></i> Youtube </a>
+        </span>
+
+        <a href="https://www.patreon.com/FonteneleNXT">
+        <span style="font-size: 20px; color: darkorange; font-family:Verdana;">
+            <i class="fa-brands fa-patreon"></i> Patreon </a>
+        </span>
+        <hr id="hr2">
+        <br>
+        <h2 id="h2_2">
+            Fotos
+        </h2>             
+        
+        <div class = "flex-container">
+            <figure>
+                <img style="padding: 20px" src="ProjetoGNSS.jpg" width="360" height="360">
+                <figcaption id="fc1">Projeto GNSS usando Adafruit Feather M0 com módulo NEO-M8T</figcaption> 
+            </figure>
+            
+            <figure>
+                <img style = "padding: 20px"src="ProjetoGNSS1.jpg" width="360" height="360">
+                <figcaption id="fc2">Levantamento de posicionamento do projeto GNSS dentro de caixa com botões feita com impressora 3D conectada em bateria</figcaption>
+            </figure>         
+                            
+        </div>  
+        
+        <hr id="hr3">
+
+        <form>
+            <h2 id="h2_1"> N primeiros termos de Fibonacci </h2>
+            <label id="label1">Escolha o número de termos:</label>
+            <input id="numIn" type="number" min="0" max="100">
+            <button type="button" onclick="displayMessage()">Ok</button>
+            <p id="showinputhere"> Resultado: </p>
+            
+        </form>
+      
+        <script>
+            //var numRand = Math.floor(Math.random() * 10);
+            
+            function displayMessage(){
+                document.getElementById("showinputhere").innerHTML = 'Resultado: ';
+                var num = document.getElementById("numIn").value;
+                console.log("num é " + num);
+                var n1=0;
+                var n2=1;
+                var count=2;    
+                var n3;
+                
+                console.log(n1,n2);
+                
+                
+                if(num==1){
+                    document.getElementById("showinputhere").innerHTML += n1;
+                }
+                else if (num==2){
+                    document.getElementById("showinputhere").innerHTML += n1 + " " +  n2;
+                }
+                
+                else{
+                    document.getElementById("showinputhere").innerHTML += '0 1 ';
+                    while(count<num){
+                        n3=n1+n2;
+                        console.log(n3);
+                        document.getElementById("showinputhere").innerHTML += n3 + ' ';
+                        n1=n2;
+                        n2=n3;
+                        count++;
+                    }
+                }       
+            }
+            
+            const parags = Array.from(document.getElementsByTagName('p'));
+            const h2_0 = Array.from(document.getElementsByTagName('h2'));
+            const lbl = Array.from(document.getElementsByTagName('label'));
+            
+
+            function temaClaro(){
+                document.getElementById("h1_0").style.color = 'black';
+                document.getElementsByTagName("body")[0].style.background = "white";
+                document.getElementById("label1").style.color = 'black';
+               
+
+                for (let i = 0; i < parags.length; i++) {
+                    parags[i].style.color = 'black';
+                }
+                for (let j = 0; j < h2_0.length; j++) {
+                    h2_0[j].style.color = 'black';
+                }
+                for (let l = 0; l < lbl.length; l++) {
+                    lbl[j].style.color = 'black';
+                    lbl[j].style.font = "25px";
+                }   
+            }
+
+            function temaEscuro(){
+                document.getElementById("h1_0").style.color = 'white';
+                document.getElementsByTagName("body")[0].style.background = "black";
+                document.getElementById("label1").style.color = 'white';
+               
+
+                for (let i = 0; i < parags.length; i++) {
+                    parags[i].style.color = 'white';
+                }
+                for (let j = 0; j < h2_0.length; j++) {
+                    h2_0[j].style.color = 'white';
+                }
+                for (let l = 0; l < lbl.length; l++) {
+                    lbl[j].style.color = 'white';
+                    lbl[j].style.font = "25px";
+                }   
+            }
+
+                      
+            
+                        
+        </script>
+
+               
+        
+        <script>
+
+
+        </script>
+
+    </div>
+
+      
+</body>
+
+</html>

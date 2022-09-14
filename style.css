@@ -1,0 +1,51 @@
+body {
+    background-color:black;
+}
+h1 {
+    color:white;
+    font-family:Verdana;
+    text-align:start;
+}
+h2 {
+    color:white;
+    font-family:Verdana;
+    text-align:start;
+}
+p {
+    color:white;
+    font-family:Verdana;
+    text-align:start;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+figure {
+    max-width: 100%;
+    max-height: 100%; 
+}
+a {
+    text-decoration:none;
+}
+span {
+    padding: 60px;
+}
+figcaption {
+    color:white;    
+}
+label {
+    color:white; 
+    font-size: 25px;   
+}
+hr{
+    color:white;
+}
+.light-mode {
+    background-color: white;
+    color: white;    
+  }
+
+.dark-mode{
+    background-color: black;
+    color: black;
+}
